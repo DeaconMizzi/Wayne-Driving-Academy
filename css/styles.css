@@ -601,7 +601,7 @@ progress {
 }
 
 .img-fluid {
-  max-width: 50%;
+  max-width: 70%;
   height: auto;
 }
 
@@ -640,6 +640,12 @@ progress {
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
+}
+
+@media (max-width: 480px){
+  .img-fluid{
+    max-width: 100%;
+  }
 }
 
 @media (min-width: 576px) {
