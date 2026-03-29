@@ -36,6 +36,16 @@ body {
   line-height: 1.7;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Sora", "Segoe UI", sans-serif;
+  letter-spacing: -0.03em;
+}
+
 a {
   color: var(--brand);
   text-decoration: none;
@@ -70,9 +80,9 @@ a:hover {
 
 .section-heading {
   margin: 0;
-  font-family: "DM Serif Display", Georgia, serif;
   font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.12;
+  font-weight: 700;
+  line-height: 1.08;
 }
 
 .section-subheading {
@@ -106,6 +116,12 @@ a:hover {
   color: #fff;
   font-size: 0.95rem;
   font-weight: 700;
+}
+
+.navbar-brand span {
+  display: block;
+  line-height: 1.1;
+  max-width: 13rem;
 }
 
 .navbar-brand img {
@@ -176,9 +192,9 @@ a:hover {
 
 .hero-copy h1 {
   margin: 0;
-  font-family: "DM Serif Display", Georgia, serif;
   font-size: clamp(2.2rem, 7vw, 4.6rem);
-  line-height: 1.05;
+  font-weight: 800;
+  line-height: 1.02;
 }
 
 .hero-lead {
@@ -200,7 +216,9 @@ a:hover {
   border-radius: 999px;
   padding: 0.76rem 1.2rem;
   border: 1px solid transparent;
+  min-height: 48px;
   font-weight: 700;
+  text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
@@ -272,8 +290,8 @@ a:hover {
 
 .highlight-card h3 {
   margin-top: 0;
-  font-family: "DM Serif Display", Georgia, serif;
   font-size: 1.65rem;
+  font-weight: 700;
 }
 
 .stat-row {
@@ -363,22 +381,161 @@ a:hover {
   background: #18bb62;
 }
 
+.feedback-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 1.4rem;
+  align-items: stretch;
+  margin-bottom: 2.4rem;
+}
+
+.feedback-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feedback-copy .btn {
+  align-self: flex-start;
+  margin-top: 1.25rem;
+}
+
+.feedback-copy h3 {
+  margin: 0 0 0.9rem;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  line-height: 1.12;
+}
+
+.feedback-copy p:last-of-type {
+  margin-bottom: 0;
+}
+
+.feedback-label {
+  margin: 0 0 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.feed-shell {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(242, 247, 251, 0.96));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.feed-shell-head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.feed-shell-head > div {
+  min-width: 0;
+}
+
+.feed-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: #1778f2;
+  box-shadow: 0 12px 28px rgba(23, 120, 242, 0.24);
+  flex-shrink: 0;
+}
+
+.feed-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.feed-caption {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.feed-frame {
+  overflow: hidden;
+  border-radius: calc(var(--radius-md) + 2px);
+  border: 1px solid #dbe5f2;
+  background: #fff;
+  min-height: 580px;
+}
+
+.fb-page-feed {
+  display: block;
+  width: min(100%, 500px);
+  min-height: 580px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.reviews-copy {
+  margin-bottom: 1.4rem;
+}
+
+.reviews-copy h3 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+}
+
+.reviews-copy p {
+  margin: 0.65rem auto 0;
+  max-width: 620px;
+  color: var(--muted);
+}
+
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
   gap: 1rem;
+  align-items: start;
+  justify-items: center;
 }
 
 .review-card {
+  width: min(100%, 350px);
   background: var(--surface);
   border-radius: var(--radius-md);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
-  padding: 0.6rem;
+  padding: 0;
+  overflow: hidden;
 }
 
 .review-card .fb-post {
+  display: block;
   width: 100%;
+}
+
+.review-card .fb-review-embed {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 260px;
+  border: 0;
+}
+
+.review-card .fb_iframe_widget,
+.review-card .fb_iframe_widget span,
+.review-card .fb_iframe_widget iframe {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.review-card .fb_iframe_widget span {
+  overflow: hidden !important;
 }
 
 .footer {
@@ -393,12 +550,35 @@ a:hover {
 }
 
 @media (max-width: 991.98px) {
+  #mainNav {
+    padding: 0.75rem 0;
+  }
+
   .nav-shell {
     border-radius: 16px;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .navbar-brand {
+    font-size: 0.88rem;
+  }
+
+  .navbar-brand span {
+    max-width: 11.5rem;
+  }
+
+  .navbar-collapse {
+    padding-top: 0.85rem;
+  }
+
+  .navbar-nav .nav-link {
+    margin-left: 0;
+    padding: 0.65rem 0.2rem;
   }
 
   .hero-grid,
   .about-grid,
+  .feedback-layout,
   .team-grid,
   .reviews-grid {
     grid-template-columns: 1fr;
@@ -411,5 +591,167 @@ a:hover {
 
   .page-section {
     padding: 4.5rem 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container {
+    width: min(1120px, calc(100% - 1.5rem));
+  }
+
+  .page-section {
+    padding: 4rem 0;
+  }
+
+  .section-head {
+    margin-bottom: 2rem;
+  }
+
+  .hero-copy {
+    text-align: center;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .hero-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn,
+  .feedback-copy .btn {
+    width: 100%;
+  }
+
+  .feedback-copy .btn {
+    align-self: stretch;
+  }
+
+  .hero-panel,
+  .surface-card,
+  .team-card,
+  .feed-shell {
+    padding: 1.2rem;
+  }
+
+  .team-card img {
+    width: 126px;
+    height: 126px;
+  }
+
+  .feedback-layout {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .feed-shell-head {
+    margin-bottom: 0.8rem;
+  }
+
+  .feed-frame,
+  .fb-page-feed {
+    min-height: 520px;
+  }
+
+  .reviews-copy {
+    margin-bottom: 1rem;
+  }
+
+  .reviews-grid {
+    gap: 0.85rem;
+  }
+
+  .review-card {
+    width: 100%;
+  }
+
+  .review-card .fb-review-embed {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .container {
+    width: min(1120px, calc(100% - 1rem));
+  }
+
+  #mainNav {
+    padding: 0.6rem 0;
+  }
+
+  .nav-shell {
+    padding: 0.5rem 0.7rem;
+  }
+
+  .navbar-brand {
+    gap: 0.55rem;
+    font-size: 0.82rem;
+  }
+
+  .navbar-brand span {
+    max-width: 8.75rem;
+  }
+
+  .navbar-brand img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .navbar-toggler {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.78rem;
+  }
+
+  .page-section {
+    padding: 3.5rem 0;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.85rem, 10vw, 2.4rem);
+  }
+
+  .hero-lead {
+    font-size: 0.98rem;
+  }
+
+  .hero-panel,
+  .surface-card,
+  .team-card,
+  .feed-shell {
+    padding: 1rem;
+  }
+
+  .hero-panel {
+    border-radius: 18px;
+  }
+
+  .feedback-copy h3,
+  .reviews-copy h3 {
+    line-height: 1.15;
+  }
+
+  .feed-shell-head {
+    gap: 0.7rem;
+  }
+
+  .feed-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .feed-frame,
+  .fb-page-feed {
+    min-height: 480px;
+  }
+
+  .stat-row {
+    gap: 0.45rem;
   }
 }
