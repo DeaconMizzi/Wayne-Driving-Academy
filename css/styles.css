@@ -7,7 +7,7 @@
   --muted: #5f6f85;
   --brand: #1f4fa3;
   --brand-strong: #163a78;
-  --accent: #ff8a3c;
+  --accent: #df5181;
   --line: #d6e2f1;
   --shadow: 0 20px 50px rgba(10, 35, 74, 0.12);
   --radius-lg: 20px;
@@ -31,7 +31,7 @@ body {
   color: var(--ink);
   background:
     radial-gradient(circle at 10% -10%, rgba(31, 79, 163, 0.12), transparent 40%),
-    radial-gradient(circle at 90% 20%, rgba(255, 138, 60, 0.12), transparent 35%),
+    radial-gradient(circle at 90% 20%, rgba(223, 81, 129, 0.12), transparent 35%),
     var(--bg);
   line-height: 1.7;
 }
@@ -170,7 +170,7 @@ a:hover {
   top: -160px;
   right: -120px;
   border-radius: 50%;
-  background: rgba(255, 138, 60, 0.18);
+  background: rgba(223, 81, 129, 0.18);
   filter: blur(2px);
 }
 
@@ -186,7 +186,7 @@ a:hover {
   letter-spacing: 0.15em;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #ffcf9d;
+  color: #f7bfd1;
   margin-bottom: 1rem;
 }
 
@@ -228,12 +228,12 @@ a:hover {
 
 .btn-primary {
   background: var(--accent);
-  color: #1c1006;
+  color: #fff;
 }
 
 .btn-primary:hover {
-  color: #1c1006;
-  box-shadow: 0 10px 22px rgba(255, 138, 60, 0.35);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(223, 81, 129, 0.35);
 }
 
 .btn-secondary {
